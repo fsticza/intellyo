@@ -1,2 +1,2 @@
-# intellyo
-Intellyo
+# React Users
+Javascript developer test exercise
