@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import {
   BrowserRouter as Router,
   Route,
@@ -28,6 +28,7 @@ class App extends Component {
        this.setState({userList})
      })
      .catch(err => console.error(err))
+     .then(() => {this.setState({isFetching: false})})
   }
   render() {
     const { userList, isFetching } = this.state
@@ -40,6 +41,11 @@ class App extends Component {
             </nav>
           </header>
           <main className="container mt-4">
+            {isFetching &&
+              <div className="alert alert-info">
+                Fetching user list...
+              </div>
+            }
             <Route exact path="/" render={ routeProps => (
               <UserList userList={userList} {...routeProps} />
             )} />
