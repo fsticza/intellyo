@@ -33,7 +33,7 @@ class App extends Component {
   render() {
     const { userList, isFetching } = this.state
     return (
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <div className="">
           <header className="">
             <nav className="navbar navbar-light bg-light">
