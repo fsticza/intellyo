@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function User({ userList, match }) {
+export default function User ({ userList, match }) {
   const { userId } = match.params
   const user = userList.find(user => user.id === userId)
   if (!user) {

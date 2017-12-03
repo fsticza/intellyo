@@ -9,7 +9,7 @@ import User from './pages/User'
 import UserList from './pages/UserList'
 
 class App extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.state = {
       isFetching: true,
@@ -21,16 +21,16 @@ class App extends Component {
     window.fetch('https://raw.githubusercontent.com/fsticza/intellyo/master/db.json', {
       headers: {
         'Accept': 'application/json'
-      },
+      }
     })
-     .then(res => res.json())
-     .then(userList => {
-       this.setState({userList})
-     })
-     .catch(err => console.error(err))
-     .then(() => {this.setState({isFetching: false})})
+      .then(res => res.json())
+      .then(userList => {
+        this.setState({userList})
+      })
+      .catch(err => console.error(err))
+      .then(() => { this.setState({isFetching: false}) })
   }
-  render() {
+  render () {
     const { userList, isFetching } = this.state
     return (
       <Router basename={process.env.PUBLIC_URL}>
@@ -55,8 +55,8 @@ class App extends Component {
           </main>
         </div>
       </Router>
-    );
+    )
   }
 }
 
-export default App;
+export default App

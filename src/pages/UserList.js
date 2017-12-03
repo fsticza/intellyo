@@ -3,7 +3,7 @@ import {
   Link
 } from 'react-router-dom'
 
-export default function UserList({ userList }) {
+export default function UserList ({ userList }) {
   return (
     <div>
       <section className="row">
